@@ -38,8 +38,8 @@ app.use((req, res, next) => {
 // Routes
 app.use('/api', require('./routes/api'));
 
-// Root
-app.get('/', (req, res) => res.send('Job Portal API Running'));
+// Health check
+app.get('/api/health', (req, res) => res.json({ status: 'ok', environment: process.env.NODE_ENV }));
 
 // Socket.io Connection
 io.on('connection', (socket) => {
