@@ -43,18 +43,6 @@ app.use((req, res, next) => {
     next();
 });
 
-// Database Readiness check
-app.use((req, res, next) => {
-    if (mongoose.connection.readyState !== 1 && req.path.startsWith('/api')) {
-        console.error(`Database not ready for ${req.method} ${req.path}. State: ${mongoose.connection.readyState}`);
-        return res.status(503).json({
-            success: false,
-            error: 'Database not ready',
-            details: 'The server is currently unable to connect to MongoDB. Please check your connection string and IP whitelisting.'
-        });
-    }
-    next();
-});
 
 // Routes
 app.use('/api', require('./routes/api'));
@@ -72,19 +60,38 @@ io.on('connection', (socket) => {
 
 // Database Connection
 const MONGODB_URI = process.env.MONGODB_URI;
-const maskedURI = MONGODB_URI ? MONGODB_URI.replace(/:([^@]+)@/, ':****@') : 'MISSING';
 
-console.log(`Attempting to connect to MongoDB: ${maskedURI}`);
+// Cached connection for Serverless
+let isConnected = false;
 
-mongoose.connect(MONGODB_URI)
-    .then(() => console.log('MongoDB Connected Successfully'))
-    .catch(err => {
-        console.error('MongoDB Connection FAILURE:');
-        console.error(err);
-    });
+const connectDB = async () => {
+    if (isConnected) return;
+    try {
+        await mongoose.connect(MONGODB_URI);
+        isConnected = true;
+        console.log('MongoDB Connected Successfully');
+    } catch (err) {
+        console.error('MongoDB Connection FAILURE:', err);
+    }
+};
 
-server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+// Database Readiness check
+app.use(async (req, res, next) => {
+    await connectDB();
+    if (mongoose.connection.readyState !== 1 && req.path.startsWith('/api')) {
+        return res.status(503).json({
+            success: false,
+            error: 'Database not ready',
+        });
+    }
+    next();
+});
 
-module.exports = { io };
+// Start server only if not in Vercel
+if (process.env.NODE_ENV !== 'production') {
+    server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+}
+
+module.exports = app;
 
 
