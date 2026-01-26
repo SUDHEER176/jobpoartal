@@ -5,16 +5,7 @@ const cors = require('cors');
 const fs = require('fs');
 const path = require('path');
 
-// Logging to file
-const logFile = fs.createWriteStream(path.join(__dirname, 'server.log'), { flags: 'a' });
-const logStdout = process.stdout;
-
-console.log = function (d) {
-    logFile.write(new Date().toISOString() + ': ' + d + '\n');
-    logStdout.write(new Date().toISOString() + ': ' + d + '\n');
-};
-console.error = console.log;
-
+// Middleware
 const app = express();
 const server = require('http').createServer(app);
 const io = require('socket.io')(server, {
