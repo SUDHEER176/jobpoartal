@@ -11,7 +11,7 @@ export default function JobCard({ job }) {
             {/* Top Row: Time Badge and Bookmark/Icon */}
             <div className="flex justify-between items-start w-full">
                 <div className="px-2 py-0.5 bg-[#309689]/10 rounded flex items-center justify-center">
-                    <span className="font-['Figtree'] text-[#309689] text-xs font-medium whitespace-nowrap">
+                    <span className="font-sans text-[#309689] text-xs font-medium whitespace-nowrap">
                         {getTimeAgo(job.createdAt)}
                     </span>
                 </div>
@@ -38,10 +38,10 @@ export default function JobCard({ job }) {
                     )}
                 </div>
                 <div className="flex flex-col gap-0.5 min-w-0 py-0.5">
-                    <h3 className="font-['Figtree'] font-bold text-xl leading-snug text-slate-900 dark:text-white group-hover:text-[#309689] transition-colors line-clamp-1">
+                    <h3 className="font-sans font-bold text-xl leading-snug text-slate-900 dark:text-white group-hover:text-[#309689] transition-colors line-clamp-1">
                         {job.title}
                     </h3>
-                    <p className="font-['Figtree'] text-sm text-[#6C757D] dark:text-slate-400 font-medium tracking-tight">
+                    <p className="font-sans text-sm text-[#6C757D] dark:text-slate-400 font-medium tracking-tight">
                         {job.company}
                     </p>
                 </div>
@@ -57,7 +57,7 @@ export default function JobCard({ job }) {
                 </div>
 
                 <Link to={`/jobs/${job._id}`} className="flex-shrink-0">
-                    <button className="bg-[#309689] hover:bg-[#288579] text-white px-4 py-1.5 rounded-lg font-['Figtree'] font-semibold text-sm capitalize transition-all shadow-sm active:scale-95">
+                    <button className="bg-[#309689] hover:bg-[#288579] text-white px-4 py-1.5 rounded-lg font-sans font-semibold text-sm capitalize transition-all shadow-sm active:scale-95">
                         View details
                     </button>
                 </Link>
@@ -72,7 +72,7 @@ function MetaItem({ icon, label }) {
             <span className="text-[#309689] flex-shrink-0">
                 {icon}
             </span>
-            <span className="font-['Figtree'] font-medium text-xs text-[#6C757D] dark:text-slate-400 whitespace-nowrap overflow-hidden text-ellipsis max-w-[120px]">
+            <span className="font-sans font-medium text-xs text-[#6C757D] dark:text-slate-400 whitespace-nowrap overflow-hidden text-ellipsis max-w-[120px]">
                 {label}
             </span>
         </div>

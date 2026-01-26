@@ -16,8 +16,6 @@ export function CompanyStats() {
             gap: 86px;
             width: 100%;
             max-width: 1440px;
-            background: transparent;
-            font-family: 'Figtree', sans-serif;
             margin: 0 auto;
         }
 

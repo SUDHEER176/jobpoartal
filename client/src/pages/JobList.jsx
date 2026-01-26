@@ -128,12 +128,12 @@ export default function JobList() {
                         <div className="flex flex-col gap-6">
                             {/* Results Info Bar */}
                             <div className="flex flex-col sm:flex-row justify-between items-center gap-4 w-full px-1">
-                                <span className="font-['Figtree'] font-medium text-base text-[#6C757D] dark:text-slate-400">
+                                <span className="font-sans font-medium text-base text-[#6C757D] dark:text-slate-400">
                                     Showing {jobs.length}-{jobs.length} of {jobs.length} results
                                 </span>
                                 <button
                                     onClick={() => handleFilterChange('sortBy', filters.sortBy === 'latest' ? 'oldest' : 'latest')}
-                                    className="w-auto h-9 px-4 flex items-center gap-3 border-[1.5px] border-slate-200 dark:border-white/10 rounded-lg text-[#6C757D] dark:text-slate-400 font-['Figtree'] font-medium text-sm hover:bg-slate-50 dark:hover:bg-white/5 transition-colors"
+                                    className="w-auto h-9 px-4 flex items-center gap-3 border-[1.5px] border-slate-200 dark:border-white/10 rounded-lg text-[#6C757D] dark:text-slate-400 font-sans font-medium text-sm hover:bg-slate-50 dark:hover:bg-white/5 transition-colors"
                                 >
                                     Sort by {filters.sortBy === 'latest' ? 'latest' : 'oldest'}
                                     <ChevronDown className={cn("size-4 transition-transform duration-300", filters.sortBy === 'oldest' && "rotate-180")} />
@@ -161,14 +161,14 @@ export default function JobList() {
                             {jobs.length > 0 && (
                                 <div className="flex justify-between items-center w-full pt-6">
                                     <div className="flex gap-4">
-                                        <button className="size-8 flex items-center justify-center bg-[#309689] text-white rounded-lg font-['Figtree'] font-semibold text-sm shadow-sm">
+                                        <button className="size-8 flex items-center justify-center bg-[#309689] text-white rounded-lg font-sans font-semibold text-sm shadow-sm">
                                             1
                                         </button>
-                                        <button className="size-8 flex items-center justify-center border border-slate-200 dark:border-white/10 text-[#6C757D] rounded-lg font-['Figtree'] font-semibold text-sm hover:border-[#309689] hover:text-[#309689] transition-all">
+                                        <button className="size-8 flex items-center justify-center border border-slate-200 dark:border-white/10 text-[#6C757D] rounded-lg font-sans font-semibold text-sm hover:border-[#309689] hover:text-[#309689] transition-all">
                                             2
                                         </button>
                                     </div>
-                                    <button className="h-8 px-4 flex items-center justify-center gap-2 border border-slate-200 dark:border-white/10 text-[#6C757D] rounded-lg font-['Figtree'] font-medium text-sm hover:border-[#309689] hover:text-[#309689] transition-all">
+                                    <button className="h-8 px-4 flex items-center justify-center gap-2 border border-slate-200 dark:border-white/10 text-[#6C757D] rounded-lg font-sans font-medium text-sm hover:border-[#309689] hover:text-[#309689] transition-all">
                                         Next
                                         <ChevronRight className="size-4" />
                                     </button>

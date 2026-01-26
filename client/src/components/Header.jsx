@@ -63,7 +63,7 @@ export function Header() {
     const isTopHome = isHome && !scrolled;
 
     const headerClass = cn(
-        'fixed top-0 z-50 w-full transition-all duration-300 border-b',
+        'fixed top-0 z-50 w-full transition-all duration-300 border-b font-sans',
         {
             'bg-transparent border-transparent': isTopHome,
             'bg-white/70 dark:bg-black/70 backdrop-blur-md border-slate-200/50 dark:border-white/10 shadow-sm supports-[backdrop-filter]:bg-white/60 supports-[backdrop-filter]:dark:bg-black/60': !isTopHome,
