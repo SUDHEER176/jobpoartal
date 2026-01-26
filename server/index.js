@@ -2,21 +2,8 @@ require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-const fs = require('fs');
-const path = require('path');
-
-const util = require('util');
-
-// Logging to file
-const logFile = fs.createWriteStream(path.join(__dirname, 'server.log'), { flags: 'a' });
-const logStdout = process.stdout;
-
-console.log = function (...args) {
-    const msg = util.format(...args) + '\n';
-    logFile.write(new Date().toISOString() + ': ' + msg);
-    logStdout.write(new Date().toISOString() + ': ' + msg);
-};
-console.error = console.log;
+// Standard console logging
+console.log('Starting Job Portal Server...');
 
 const app = express();
 const server = require('http').createServer(app);

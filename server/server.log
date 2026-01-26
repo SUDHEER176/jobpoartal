@@ -4546,3 +4546,15 @@
 2026-01-26T17:51:00.189Z: User disconnected:
 2026-01-26T17:51:06.291Z: GET /api/auth/me/04198a70-3de3-4cd1-b5a8-4fa48527dc48 304 - 30ms
 2026-01-26T17:53:56.830Z: GET /api/auth/me/04198a70-3de3-4cd1-b5a8-4fa48527dc48 304 - 49ms
+2026-01-26T18:13:47.096Z: Attempting to connect to MongoDB: mongodb+srv:****@cluster-1.flufeol.mongodb.net/
+2026-01-26T18:13:47.119Z: Server running on port 5000
+2026-01-26T18:13:48.839Z: MongoDB Connected Successfully
+2026-01-26T18:14:11.254Z: GET /api/auth/me/04198a70-3de3-4cd1-b5a8-4fa48527dc48 304 - 107ms
+2026-01-26T18:14:13.432Z: GET /api/health 200 - 4ms
+2026-01-26T18:14:13.436Z: GET /api/health 200 - 1ms
+2026-01-26T18:14:14.494Z: GET /api/auth/me/04198a70-3de3-4cd1-b5a8-4fa48527dc48 304 - 52ms
+2026-01-26T18:14:14.535Z: GET /api/auth/me/04198a70-3de3-4cd1-b5a8-4fa48527dc48 304 - 38ms
+2026-01-26T18:14:14.579Z: GET /api/auth/me/04198a70-3de3-4cd1-b5a8-4fa48527dc48 304 - 41ms
+2026-01-26T18:14:25.170Z: GET /api/applications/user/04198a70-3de3-4cd1-b5a8-4fa48527dc48 304 - 96ms
+2026-01-26T18:14:25.434Z: GET /api/applications/user/04198a70-3de3-4cd1-b5a8-4fa48527dc48 304 - 260ms
+2026-01-26T18:23:17.705Z: GET /api/auth/me/04198a70-3de3-4cd1-b5a8-4fa48527dc48 304 - 46ms
