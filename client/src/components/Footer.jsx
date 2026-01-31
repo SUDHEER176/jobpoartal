@@ -263,27 +263,26 @@ const footerLinks = [
         title: "For Job Seekers",
         links: [
             { id: 1, title: "Browse Jobs", url: "/jobs" },
-            { id: 2, title: "Companies", url: "/companies" },
-            { id: 3, title: "Career Resources", url: "#" },
+            { id: 2, title: "Success Stories", url: "/success-stories" },
+            { id: 3, title: "Help Center", url: "/help-center" },
             { id: 4, title: "Job Alerts", url: "#" },
         ],
     },
     {
-        title: "For Employers",
+        title: "Product",
         links: [
-            { id: 5, title: "Post a Job", url: "/post-job" },
-            { id: 6, title: "Pricing", url: "#" },
-            { id: 7, title: "Recruiter Tools", url: "#" },
-            { id: 8, title: "Success Stories", url: "#" },
+            { id: 5, title: "Integrations", url: "/integrations" },
+            { id: 6, title: "For Recruiters", url: "/for-recruiters" },
+            { id: 7, title: "For Job Seekers", url: "/for-jobseekers" },
         ],
     },
     {
         title: "Company",
         links: [
-            { id: 9, title: "About Us", url: "#" },
+            { id: 9, title: "About Us", url: "/about" },
             { id: 10, title: "Contact", url: "#" },
-            { id: 11, title: "Blog", url: "#" },
-            { id: 12, title: "Privacy Policy", url: "#" },
+            { id: 11, title: "Terms of Service", url: "/terms" },
+            { id: 12, title: "Privacy Policy", url: "/privacy" },
         ],
     },
 ];

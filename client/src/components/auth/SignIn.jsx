@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { supabase } from '../../lib/supabaseClient'
-import { useNavigate, Link } from 'react-router-dom'
+import { useNavigate, Link, useSearchParams } from 'react-router-dom'
 import { Briefcase } from 'lucide-react'
 
 const SignIn = () => {
@@ -9,6 +9,8 @@ const SignIn = () => {
     const [error, setError] = useState("")
     const [loading, setLoading] = useState(false)
     const navigate = useNavigate()
+    const [searchParams] = useSearchParams()
+    const redirectTo = searchParams.get('redirect') || '/'
 
     const validateEmail = (email) => {
         return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -29,7 +31,7 @@ const SignIn = () => {
         try {
             const { error } = await supabase.auth.signInWithPassword({ email, password })
             if (error) throw error
-            navigate('/')
+            navigate(redirectTo)
         } catch (err) {
             setError(err.message)
         } finally {
@@ -108,7 +110,7 @@ const SignIn = () => {
                             <span className="text-xs text-gray-400">
                                 Don&apos;t have an account?{" "}
                                 <Link
-                                    to="/auth?mode=signup"
+                                    to={`/auth?mode=signup${redirectTo !== '/' ? `&redirect=${encodeURIComponent(redirectTo)}` : ''}`}
                                     className="underline text-white/80 hover:text-white transition-colors"
                                 >
                                     Sign up, it&apos;s free!

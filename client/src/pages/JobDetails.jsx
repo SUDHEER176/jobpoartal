@@ -26,6 +26,11 @@ export default function JobDetails() {
     const navigate = useNavigate()
     const { user, dbUser, refreshUser } = useAuth()
 
+    // Redirect to login if not authenticated
+    if (!user) {
+        return <Navigate to={`/auth?mode=login&redirect=/jobs/${id}`} replace />
+    }
+
     // Redirect seekers to onboarding if pending
     if (dbUser?.role === 'seeker' && dbUser?.onboardingStatus === 'pending') {
         return <Navigate to="/onboarding" replace />

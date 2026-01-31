@@ -27,6 +27,13 @@ import RecruiterLanding from './pages/RecruiterLanding'
 import SeekerLanding from './pages/SeekerLanding'
 import Preloader from './components/Preloader'
 
+import About from './pages/About'
+import SuccessStories from './pages/SuccessStories'
+import Terms from './pages/Terms'
+import Privacy from './pages/Privacy'
+import HelpCenter from './pages/HelpCenter'
+import Integrations from './pages/Integrations'
+
 function App() {
   const [isBackendReady, setIsBackendReady] = useState(false);
 
@@ -78,6 +85,14 @@ function App() {
                 <Route path="for-recruiters" element={<RecruiterLanding />} />
                 <Route path="for-jobseekers" element={<SeekerLanding />} />
                 <Route path="admin" element={<AdminDashboard />} />
+
+                {/* Informational Pages */}
+                <Route path="about" element={<About />} />
+                <Route path="success-stories" element={<SuccessStories />} />
+                <Route path="terms" element={<Terms />} />
+                <Route path="privacy" element={<Privacy />} />
+                <Route path="help-center" element={<HelpCenter />} />
+                <Route path="integrations" element={<Integrations />} />
               </Route>
               <Route path="/auth" element={<AuthPage />} />
               <Route path="/auth/callback" element={<AuthCallback />} />

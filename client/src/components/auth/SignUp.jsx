@@ -6,6 +6,7 @@ import { Briefcase, User, Building } from 'lucide-react'
 const SignUp = () => {
     const [searchParams] = useSearchParams()
     const urlRole = searchParams.get('role') // Get role from URL
+    const redirectTo = searchParams.get('redirect') || '/' // Get redirect from URL
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [role, setRole] = useState(urlRole === 'recruiter' ? 'recruiter' : 'seeker') // Pre-select from URL
@@ -150,7 +151,7 @@ const SignUp = () => {
                             <span className="text-xs text-gray-400">
                                 Already have an account?{" "}
                                 <Link
-                                    to="/auth?mode=login"
+                                    to={`/auth?mode=login${redirectTo !== '/' ? `&redirect=${encodeURIComponent(redirectTo)}` : ''}`}
                                     className="underline text-white/80 hover:text-white transition-colors"
                                 >
                                     Sign in

@@ -339,7 +339,7 @@ function ListItem({
 }) {
     return (
         <NavigationMenuLink className={cn('block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-slate-100 dark:hover:bg-white/10 focus:bg-slate-100 dark:focus:bg-white/10', className)} {...props} asChild>
-            <a href={href} className="flex items-center gap-4">
+            <Link to={href} className="flex items-center gap-4">
                 <div className="flex items-center justify-center rounded-lg bg-brand-500/10 p-2">
                     <Icon className="size-5 text-brand-400" />
                 </div>
@@ -347,7 +347,7 @@ function ListItem({
                     <span className="text-sm font-medium leading-none text-slate-900 dark:text-white">{title}</span>
                     <span className="text-xs leading-snug text-slate-600 dark:text-slate-400 line-clamp-1">{description}</span>
                 </div>
-            </a>
+            </Link>
         </NavigationMenuLink>
     );
 }
@@ -366,14 +366,8 @@ const productLinks = [
         icon: Building2,
     },
     {
-        title: 'Analytics',
-        href: '#',
-        description: 'Track your application performance',
-        icon: BarChart,
-    },
-    {
         title: 'Integrations',
-        href: '#',
+        href: '/integrations',
         description: 'Connect with your favorite tools',
         icon: PlugIcon,
     },
@@ -382,13 +376,13 @@ const productLinks = [
 const companyLinks = [
     {
         title: 'About Us',
-        href: '#',
+        href: '/about',
         description: 'Learn more about our mission',
         icon: Users,
     },
     {
         title: 'Success Stories',
-        href: '#',
+        href: '/success-stories',
         description: 'See how others found success',
         icon: Star,
     },
@@ -397,17 +391,17 @@ const companyLinks = [
 const companyLinks2 = [
     {
         title: 'Terms of Service',
-        href: '#',
+        href: '/terms',
         icon: FileText,
     },
     {
         title: 'Privacy Policy',
-        href: '#',
+        href: '/privacy',
         icon: Shield,
     },
     {
         title: 'Help Center',
-        href: '#',
+        href: '/help-center',
         icon: HelpCircle,
     },
 ];
