@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 @theme {
   --color-brand-50: #eff6ff;
@@ -13,7 +14,8 @@
   --color-brand-900: #1e3a8a;
   --color-brand-950: #172554;
 
-  --font-sans: 'Josefin Sans', 'Outfit', sans-serif;
+  --font-sans: 'Outfit', 'Inter', 'Josefin Sans', 'Roboto', sans-serif;
+  --font-display: 'Josefin Sans', sans-serif;
 
   --animate-fade-in: fadeIn 0.5s ease-out;
   --animate-slide-up: slideUp 0.5s ease-out;
@@ -109,7 +111,14 @@
     --ring: 212.7 26.8% 83.9%;
   }
 
-  @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Outfit:wght@100..900&display=swap');
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Outfit', sans-serif;
+  }
 
   * {
     @apply transition-colors duration-300;
@@ -188,6 +197,7 @@
     scrollbar-width: none;
   }
 }
+
 /* Custom Scrollbar for Chatbot */
 .scrollbar-thin::-webkit-scrollbar {
   width: 6px;
