@@ -97,7 +97,7 @@ export function RecentJobs() {
                             scale: 1.005,
                             transition: { duration: 0.2 }
                         }}
-                        className="group relative bg-white dark:bg-zinc-900/60 backdrop-blur-xl border border-slate-200 dark:border-white/5 rounded-xl p-5 md:p-6 hover:border-blue-500/50 hover:shadow-[0_15px_40px_rgba(59,130,246,0.1)] transition-all duration-300"
+                        className="group relative bg-white dark:bg-black/60 backdrop-blur-xl border border-slate-200 dark:border-white/5 rounded-xl p-5 md:p-6 hover:border-blue-500/50 hover:shadow-[0_15px_40px_rgba(59,130,246,0.1)] transition-all duration-300"
                     >
                         <div className="flex flex-col md:flex-row gap-6 md:items-center">
 

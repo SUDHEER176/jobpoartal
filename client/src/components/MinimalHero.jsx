@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { ShinyButton } from "@/components/ui/shiny-button";
+import { FlowButton } from "@/components/ui/FlowButton";
 import { Briefcase, Building2 } from "lucide-react";
 import { useAuth } from "@/context/AuthContext";
 import { useNavigate } from "react-router-dom";
@@ -91,7 +91,7 @@ export function MinimalHero({
   }, []);
 
   return (
-    <section className="minimal-root relative w-full min-h-screen bg-[#0a0a0a] text-[#fafafa] font-sans">
+    <section className="minimal-root relative w-full min-h-screen bg-black text-[#fafafa] font-sans">
       <style>{`
 @import url('https://fonts.cdnfonts.com/css/hubot-sans');
 
@@ -245,21 +245,15 @@ export function MinimalHero({
         {/* Role Selection CTAs - Only show for non-authenticated users */}
         {!user && (
           <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-6 w-full max-w-2xl">
-            <ShinyButton
+            <FlowButton
+              text="I'm a Job Seeker"
               onClick={() => navigate('/for-jobseekers')}
-              className="shiny-cta-blue"
-            >
-              <Briefcase className="h-5 w-5" />
-              I'm a Job Seeker
-            </ShinyButton>
+            />
 
-            <ShinyButton
+            <FlowButton
+              text="I'm a Recruiter"
               onClick={() => navigate('/for-recruiters')}
-              className="shiny-cta-purple"
-            >
-              <Building2 className="h-5 w-5" />
-              I'm a Recruiter
-            </ShinyButton>
+            />
           </div>
         )}
       </main>
