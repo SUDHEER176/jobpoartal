@@ -33,6 +33,7 @@ import Terms from './pages/Terms'
 import Privacy from './pages/Privacy'
 import HelpCenter from './pages/HelpCenter'
 import Integrations from './pages/Integrations'
+import ScrollToTop from './components/ScrollToTop'
 
 function App() {
   const [isBackendReady, setIsBackendReady] = useState(false);
@@ -66,6 +67,7 @@ function App() {
 
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <ThemeProvider>
         {!isBackendReady ? (
           <Preloader />
